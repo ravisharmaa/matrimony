@@ -1,0 +1,5 @@
+-users can view profiles
+- a male user should view female profiles
+- a female user user should view male profiles
+- a user can set preferences while viewing profiles
+    viz, age,location,profession,caste,
