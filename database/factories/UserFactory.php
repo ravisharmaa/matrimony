@@ -35,6 +35,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         'current_address'=>$faker->address,
         'birth_location'=>$faker->address,
         'date_of_birth'=>$faker->dateTimeAD,
+        'bio'=>$faker->paragraph,
         'gender'=>'male',
         'academic_level'=>'Graduate',
         'caste'=>'Brahman',

@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->text('bio');
             $table->string('current_address');
             $table->string('birth_location');
             $table->date('date_of_birth');

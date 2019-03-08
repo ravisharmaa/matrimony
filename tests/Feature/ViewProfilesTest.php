@@ -21,6 +21,7 @@ class ViewProfilesTest extends TestCase
         $this->get('profiles')
             ->assertSee($profile->user->email)
             ->assertSee($profile->first_name)
+            ->assertSee($profile->bio)
             ->assertSee($profile->last_name)
             ->assertSee($profile->academic_level)
             ->assertSee($profile->caste)
