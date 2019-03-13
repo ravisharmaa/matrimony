@@ -17,7 +17,7 @@ class ViewProfilesTest extends TestCase
     {
         $this->withoutExceptionHandling();
         $profile = factory(Profile::class)->create();
-
+        
         $this->get('profiles')
             ->assertSee($profile->user->email)
             ->assertSee($profile->first_name)
@@ -25,6 +25,18 @@ class ViewProfilesTest extends TestCase
             ->assertSee($profile->last_name)
             ->assertSee($profile->academic_level)
             ->assertSee($profile->caste)
-            ->assertSee($profile->emoployed);
+            ->assertSee($profile->employed);
+    }
+    
+    /**
+     * @test
+     */
+    public function guests_can_not_filter_profiles()
+    {
+        $this->withoutExceptionHandling();
+
+        $this->get('profiles?filter=male')
+            ->assertRedirect('login');
+
     }
 }

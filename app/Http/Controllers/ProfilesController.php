@@ -14,7 +14,12 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        $profiles = Profile::all();
+        if(\request()->has('filter')) {
+            $profiles = Profile::applyFilter(\request()->filter)->get();
+        } else {
+            $profiles = Profile::all();
+        }
+
         return view('profiles.index', compact('profiles'));
     }
 
