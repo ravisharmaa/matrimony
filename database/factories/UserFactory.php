@@ -44,3 +44,44 @@ $factory->define(Profile::class, function (Faker $faker) {
     ];
 });
 
+$factory->state(Profile::class, 'male', function(Faker $faker) {
+    return [
+        'gender' => 'male'
+    ];
+});
+
+$factory->state(Profile::class, 'female', function(Faker $faker) {
+    return [
+      'gender' => 'female'
+    ];
+});
+
+$factory->state(Profile::class, 'employment', function(Faker $faker) {
+    return [
+        'employed' => true,
+    ];
+});
+
+$factory->state(Profile::class, 'newar', function(Faker $faker) {
+    return [
+        'caste' => 'Newar',
+    ];
+});
+
+$factory->state(Profile::class, 'chhetri', function(Faker $faker) {
+    return [
+        'caste' => 'Chhetri',
+    ];
+});
+
+$factory->state(Profile::class, 'magar', function(Faker $faker) {
+    return [
+        'caste' => 'Magar',
+    ];
+});
+
+$factory->state(Profile::class, 'others', function(Faker $faker) {
+    return [
+        'caste' => 'Others',
+    ];
+});

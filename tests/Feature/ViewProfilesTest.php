@@ -31,12 +31,20 @@ class ViewProfilesTest extends TestCase
     /**
      * @test
      */
-    public function guests_can_not_filter_profiles()
+    public function guests_can_filter_profiles()
     {
         $this->withoutExceptionHandling();
 
-        $this->get('profiles?filter=male')
-            ->assertRedirect('login');
+        $maleProfiles = factory(Profile::class)->state('male')->create();
+        $femaleProfiles = factory(Profile::class)->state('female')->create();
+
+        $this->get('profiles?gender=male')
+            ->assertSee($maleProfiles->first_name)
+            ->assertDontSee($femaleProfiles->first_name);
+
+        $this->get('profiles?gender=female')
+            ->assertSee($femaleProfiles->gender)
+            ->assertDontSee($maleProfiles->first_name);
 
     }
 }

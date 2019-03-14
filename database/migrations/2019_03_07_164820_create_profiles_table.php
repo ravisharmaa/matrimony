@@ -22,7 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('current_address');
             $table->string('birth_location');
             $table->date('date_of_birth');
-            $table->enum('gender',['male','female']);
+            $table->enum('gender',['male','female'])->nullable();
             $table->string('academic_level');
             $table->string('caste');
             $table->enum('marital_status',['single','divorced','widowed']);

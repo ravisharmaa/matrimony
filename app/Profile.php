@@ -13,8 +13,8 @@ class Profile extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function scopeApplyFilterFor($query)
+    public function scopeFilter($query, $filters)
     {
-        return [];
+        $filters->apply($query);
     }
 }
