@@ -3,18 +3,24 @@
  * Created by PhpStorm.
  * User: ravibastola
  * Date: 2019-03-13
- * Time: 23:45
+ * Time: 23:45.
  */
 
 namespace App\Filters;
 
+use App\Profile;
 
 class ProfileFilters extends Filters
 {
-    protected $filters = ['sex','employment','age'];
+    protected $filters = ['sex', 'employment', 'age'];
 
-    public function sex()
+    /**
+     * @param $sex
+     *
+     * @return mixed
+     */
+    public function sex($sex)
     {
-        dd('hello');
+        return Profile::where('gender', $sex);
     }
 }

@@ -15,7 +15,9 @@ class ProfilesController extends Controller
      */
     public function index(ProfileFilters $filters)
     {
-        $profiles = Profile::filter($filters);
+        $profiles = Profile::filter($filters)->get();
+
+        dd($profiles->toArray());
 
         return view('profiles.index', compact('profiles'));
     }
