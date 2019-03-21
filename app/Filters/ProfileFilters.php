@@ -12,15 +12,14 @@ use App\Profile;
 
 class ProfileFilters extends Filters
 {
-    protected $filters = ['sex', 'employment', 'age'];
+    protected $filters = ['gender', 'employment', 'age'];
 
     /**
-     * @param $sex
-     *
+     * @param $gender
      * @return mixed
      */
-    public function sex($sex)
+    public function gender($gender)
     {
-        return Profile::where('gender', $sex);
+        return Profile::where('gender', $gender);
     }
 }

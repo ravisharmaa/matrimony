@@ -17,8 +17,6 @@ class ProfilesController extends Controller
     {
         $profiles = Profile::filter($filters)->get();
 
-        dd($profiles->toArray());
-
         return view('profiles.index', compact('profiles'));
     }
 
